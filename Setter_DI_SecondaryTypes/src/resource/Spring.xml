@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+
+<bean id="engine" class="beans.Engine">
+<property name="Model" value="2017"></property>
+</bean>
+
+<bean id="car" class="beans.Car">
+<property name="carName" value="Audi"/>
+
+<property name="engine" ref="engine"/><!-- passing  secondary type  -->
+
+</bean>
+ 
+ <!--  exmple for inner bean  -->
+ 
+ <bean id="car1" class="beans.Car">
+ <property name="carName" value="Verna"/>
+ <property name="engine"> 
+	 	 <bean class="beans.Engine">
+	 	<property name="Model" value="2018"/>
+ 		</bean>
+ 
+ </property>
+ 
+ 
+ 
+ </bean>
+ 
+ 
+ 
+ 
+</beans>
